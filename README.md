@@ -72,7 +72,4 @@ APPWRITE_API_URL=''
 
 If you want to contribute to this project and make it better, your help is very welcome. Submit a pull request or open an issue.
 
-```
 
-Copy this code and replace the placeholders with your actual project information. Make sure to place the actual screenshots in the `assets` folder and update the image file names in the README.
-```
