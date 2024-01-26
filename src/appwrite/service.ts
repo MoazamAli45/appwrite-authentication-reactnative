@@ -6,8 +6,8 @@ import Snackbar from 'react-native-snackbar';
 
 const appwriteClient = new Client();
 
-const APPWRITE_ENDPOINT = config.APPWRITE_API_URL;
-const APPWRITE_PROJECT_ID = config.APPWRITE_PROJECT_ID;
+const APPWRITE_ENDPOINT: string | undefined = config.APPWRITE_API_URL;
+const APPWRITE_PROJECT_ID: string | undefined = config.APPWRITE_PROJECT_ID;
 
 //   FOR CREATING USER ACCOUNT
 type createUserAccount = {
@@ -26,9 +26,10 @@ class AppwriteService {
   account;
 
   constructor() {
+    //  exclamation mark tells that it must be defined
     appwriteClient
-      .setEndpoint(APPWRITE_ENDPOINT)
-      .setProject(APPWRITE_PROJECT_ID);
+      .setEndpoint(APPWRITE_ENDPOINT!)
+      .setProject(APPWRITE_PROJECT_ID!);
 
     this.account = new Account(appwriteClient);
   }
@@ -45,6 +46,7 @@ class AppwriteService {
       );
       if (userAccount) {
         //   Move to login function
+        await this.login({email, password});
       } else {
         return userAccount;
       }
@@ -60,10 +62,7 @@ class AppwriteService {
   //    LOGIN ACCOUNT
   async login({email, password}: loginUserAccount) {
     try {
-      const loginAccount = await this.account.createEmailSession(
-        email,
-        password,
-      );
+      return await this.account.createEmailSession(email, password);
     } catch (error) {
       Snackbar.show({
         text: String(error),
@@ -77,7 +76,10 @@ class AppwriteService {
   //   GET USER
   async getCurrentUser() {
     try {
-      return await this.account.get();
+      console.log('GET CURRENT USER', APPWRITE_ENDPOINT, APPWRITE_PROJECT_ID);
+      const user = await this.account.get();
+      console.log('USER', user);
+      return user;
     } catch (error) {
       console.log('ERROR IN GET CURRENT USER 🔥🔥');
     }
@@ -94,3 +96,5 @@ class AppwriteService {
     }
   }
 }
+
+export default AppwriteService;
