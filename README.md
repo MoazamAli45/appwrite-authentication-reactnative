@@ -1,41 +1,50 @@
-Certainly! If you want a concise Markdown code snippet that you can directly copy and paste into your `README.md` file, here it is:
+# React Native App with Appwrite Authentication
 
-````markdown
-# Your Project Name
-
-Brief project description goes here.
+This React Native project demonstrates how to implement user authentication using Appwrite.
 
 ## Table of Contents
 
+- [Introduction](#introduction)
+- [Features](#features)
+- [Prerequisites](#prerequisites)
 - [Getting Started](#getting-started)
-  - [Prerequisites](#prerequisites)
-  - [Installation](#installation)
 - [Usage](#usage)
-- [Appwrite Authentication](#appwrite-authentication)
-- [Screenshots](#screenshots)
+- [Screenshot](#screenshot)
 - [Contributing](#contributing)
+
+## Introduction
+
+This React Native project serves as a starting point for building a mobile application with user authentication powered by Appwrite. Appwrite is an open-source platform that provides various backend services, including authentication.
+
+## Features
+
+- User Registration
+- User Login
+- Password Reset
+- Protected Routes
+- Appwrite Integration
+
+## Prerequisites
+
+Before you begin, ensure you have the following installed on your machine:
+
+- Node.js
+- React Native CLI
+- Appwrite Server (You can set it up [here](https://appwrite.io/docs/getting-started))
 
 ## Getting Started
 
-### Prerequisites
+1. Clone the repository:
 
-- Node.js and npm installed
-- React Native CLI installed
-- Appwrite server and project set up
-
-### Installation
-
-1. Clone the repository
-   ```bash
-   git clone https://github.com/your-username/your-project.git
-   ```
-````
+````bash
+git clone https://github.com/your-username/your-react-native-app.git
+cd your-react-native-app
 
 2. Navigate to the project directory
 
    ```bash
    cd your-project
-   ```
+````
 
 3. Install dependencies
    ```bash
@@ -57,8 +66,8 @@ APPWRITE_API_URL=''
 
 ## Screenshot
 
-![Screenshot 1](assets/s1.png)
-
+<!-- ![Screenshot 1](assets/s1.png) -->
+<img src="assets/s1.png" alt="Screenshot 1" width="200" height="300">
 ## Contributing
 
 If you want to contribute to this project and make it better, your help is very welcome. Submit a pull request or open an issue.
